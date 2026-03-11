@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography | Studio</title>
+    <style>
+        :root {
+            --bg-dark: #0f0c29;
+            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --accent-purple: #892cdc;
+            --accent-blue: #00d2ff;
+            --text-light: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the header and grid */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%; /* Keeps nav full width */
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 20px 1rem;
+        }
+
+        header h1 {
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--accent-purple);
+            font-weight: 500;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* --- GALLERY GRID STYLES --- */
+        .gallery-container {
+            flex: 1;
+            padding: 2rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+            width: 100%;
+            justify-content: center; /* Centers the items inside the grid */
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+            aspect-ratio: 4 / 5; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        /* --- CAPTION STYLES --- */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 10px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            text-align: center;
+            border-top: 1px solid rgba(137, 44, 220, 0.4);
+            transform: translateY(100%); 
+            transition: all 0.3s ease;
+        }
+
+        .caption h3 {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- HOVER EFFECTS --- */
+        .gallery-item:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05); 
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0); 
+            border-top-color: var(--accent-blue);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">STUDIO.NAME</a>
+        <div style="font-size: 0.8rem; opacity: 0.5; font-weight: bold; letter-spacing: 2px;">PHOTOGRAPHY // PORTFOLIO</div>
+    </nav>
+
+    <header>
+        <h1>My Photography</h1>
+        <p>A collection of shots and edits.</p>
+    </header>
+
+    <div class="gallery-container">
+        
+        <div class="gallery-item">
+            <img src="adam.jpeg" alt="Green Gap Hoodie">
+            <div class="caption">
+                <h3>Campus Shots</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="IMG_2780.jpeg" alt="yellow sweter ">
+            <div class="caption">
+                <h3>AI Generations</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="austin .jpg" alt="Austin at the Mac">
+            <div class="caption">
+                <h3>The Editor</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="photo.jpg" alt="Converse Shirt">
+            <div class="caption">
+                <h3>Streetwear</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="IMG_2786.jpeg" alt="thinker">
+            <div class="caption">
+                <h3>Portraits</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="IMG_2791.jpeg" alt="Media Pass">
+            <div class="caption">
+                <h3>Official Press</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2636.jpg" alt="New Photo 1">
+            <div class="caption">
+                <h3>New Shot 1</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2069.jpg" alt="New Photo 2">
+            <div class="caption">
+                <h3>New Shot 2</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2784.jpeg" alt="New Photo 3">
+            <div class="caption">
+                <h3>New Shot 3</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2777.jpeg" alt="New Photo 4">
+            <div class="caption">
+                <h3>New Shot 4</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2775.jpeg" alt="New Photo 5">
+            <div class="caption">
+                <h3>New Shot 5</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2790.jpeg" alt="New Photo 6">
+            <div class="caption">
+                <h3>New Shot 6</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2627.jpeg" alt="New Photo 7">
+            <div class="caption">
+                <h3>New Shot 7</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2620.jpeg" alt="New Photo 8">
+            <div class="caption">
+                <h3>New Shot 8</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2792.jpeg" alt="New Photo 9">
+            <div class="caption">
+                <h3>New Shot 9</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="him.jpg" alt="New Photo 10">
+            <div class="caption">
+                <h3>New Shot 10</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2872.jpg" alt="New Photo 11">
+            <div class="caption">
+                <h3>New Shot 11</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2873.jpg" alt="New Photo 12">
+            <div class="caption">
+                <h3>New Shot 12</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2879.jpg" alt="New Photo 13">
+            <div class="caption">
+                <h3>New Shot 13</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="IMG_2869.jpg" alt="New Photo 14">
+            <div class="caption">
+                <h3>New Shot 14</h3>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
